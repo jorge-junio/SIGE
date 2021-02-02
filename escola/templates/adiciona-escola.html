@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %}Adicionar Escola{% endblock %}
+
+{% block main %}
+    <center><h1>Adicionar Escola</h1></center>
+
+    <form action="{% url 'adicionarEscola' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+    </form>
+
+    <br/>
+    <a href="{% url 'listarEscola'%}">Voltar</a>
+{% endblock %}

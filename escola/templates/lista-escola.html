@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Listar Escolas{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-8">
+            <center>
+                <h1>Lista de escolas</h1>
+
+                <table style="width:100%;" class="table table-striped">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        <th>Opções</th>
+                    </tr>
+
+                    {% for escola in escolas %}
+                    <tr>
+                        <td>{{ escola.nome }}</td>
+                        <td>{{ escola.descricao }}</td>
+                        <td>{{ escola.telefone }}</td>
+                        <td>{{ escola.email }}</td>
+                        <td>
+                            <a href="{% url 'editarEscola' escola.id %}" class="btn btn-primary">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <a href="{% url 'excluirEscola' escola.id %}" class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+
+            <br/>
+            <a href="{% url 'adicionarEscola'%}" class="btn btn-primary">Nova Escola</a>
+        </div>
+    </div>
+{% endblock %}
