@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Listar Turmas{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-8">
+            <center>
+                <h1>Lista de turmas</h1>
+
+                <table style="width:100%;" class="table table-striped">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Código da Escola</th>
+                        <th>Opções</th>
+                    </tr>
+
+                    {% for turma in turmas %}
+                    <tr>
+                        <td>{{ turma.nome }}</td>
+                        <td>{{ turma.descricao }}</td>
+                        <td>{{ turma.codigoEscola }}</td>
+                        <td>
+                            <a href="{% url 'editarTurma' turma.id %}" class="btn btn-primary">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <a href="{% url 'excluirTurma' turma.id %}" class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+
+            <br/>
+            <a href="{% url 'adicionarTurma'%}" class="btn btn-primary">Nova Turma</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Listar Professores{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-8">
+            <center>
+                <h1>Lista de professores</h1>
+
+                <table style="width:100%;" class="table table-striped">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>Descrição</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        <th>Opções</th>
+                    </tr>
+
+                    {% for professor in professores %}
+                    <tr>
+                        <td>{{ professor.nome }}</td>
+                        <td>{{ professor.sobrenome }}</td>
+                        <td>{{ professor.descricao }}</td>
+                        <td>{{ professor.telefone }}</td>
+                        <td>{{ professor.email }}</td>
+                        <td>
+                            <a href="{% url 'editarProfessor' professor.id %}" class="btn btn-primary">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <a href="{% url 'excluirProfessor' professor.id %}" class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+
+            <br/>
+            <a href="{% url 'adicionarProfessor'%}" class="btn btn-primary">Novo Professor</a>
+        </div>
+    </div>
+{% endblock %}

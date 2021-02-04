@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Listar Alunos{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-8">
+            <center>
+                <h1>Lista de alunos</h1>
+
+                <table style="width:100%;" class="table table-striped">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>Descrição</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        <th>Opções</th>
+                    </tr>
+
+                    {% for aluno in alunos %}
+                    <tr>
+                        <td>{{ aluno.nome }}</td>
+                        <td>{{ aluno.sobrenome }}</td>
+                        <td>{{ aluno.descricao }}</td>
+                        <td>{{ aluno.telefone }}</td>
+                        <td>{{ aluno.email }}</td>
+                        <td>
+                            <a href="{% url 'editarAluno' aluno.id %}" class="btn btn-primary">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <a href="{% url 'excluirAluno' aluno.id %}" class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </center>
+
+            <br/>
+            <a href="{% url 'adicionarAluno'%}" class="btn btn-primary">Novo Aluno</a>
+        </div>
+    </div>
+{% endblock %}
