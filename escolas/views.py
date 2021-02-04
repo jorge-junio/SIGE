@@ -327,6 +327,16 @@ def listarPromove(request):
 
     return render(request, 'promove/listar-promove.html', {'promoves': promoves})
 
+def listarHabilidadesNecessariasDeUmaDisciplina(request, id):
+    codigo = id
+
+    if codigo:
+        promoves = Promove.objects.filter(codigoDisciplina_id__exact=codigo)
+    else:
+        promoves = []
+
+    return render(request, 'promove/listar-habilidades-necessarias.html', {'promoves': promoves})
+
 def adicionarPromove(request):
     form = PromoveForm(request.POST or None)
 
@@ -354,7 +364,6 @@ def excluirPromove(request, id):
         return redirect('listarPromove')
 
     return render(request, 'promove/excluir-promove.html', {'promove': promove})
-
 
 #funções da entidade Ministra que é a tabela da relação entre (Professor e Disciplina)
 def listarMinistra(request):

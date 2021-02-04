@@ -7,7 +7,7 @@ from .views import listarDisciplina, adicionarDisciplina, editarDisciplina, excl
 from .views import listarHabilidade, adicionarHabilidade, editarHabilidade, excluirHabilidade
 from .views import listarMatricula, adicionarMatricula, editarMatricula, excluirMatricula
 from .views import listarContem, adicionarContem, editarContem, excluirContem
-from .views import listarPromove, adicionarPromove, editarPromove, excluirPromove
+from .views import listarPromove, adicionarPromove, editarPromove, excluirPromove, listarHabilidadesNecessariasDeUmaDisciplina
 from .views import listarMinistra, adicionarMinistra, editarMinistra, excluirMinistra
 
 urlpatterns = [
@@ -52,6 +52,7 @@ urlpatterns = [
     path('excluirContem/<int:id>/', excluirContem, name='excluirContem'),
 
     path('listarPromove/', listarPromove, name='listarPromove'),
+    path('listarHabilidadesNecessariasDeUmaDisciplina/<int:id>/', listarHabilidadesNecessariasDeUmaDisciplina, name='listarHabilidadesNecessariasDeUmaDisciplina'),
     path('adicionarPromove/', adicionarPromove, name='adicionarPromove'),
     path('editarPromove/<int:id>/', editarPromove, name='editarPromove'),
     path('excluirPromove/<int:id>/', excluirPromove, name='excluirPromove'),
