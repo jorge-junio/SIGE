@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Listar Alunos{% endblock %}
+{% block title %}Listar Ministras{% endblock %}
 
 {% block main %}
     <div class="row">
@@ -25,30 +25,24 @@
     <div class="row">
         <div class="col-12">
             <center>
-                <h1>Lista de alunos</h1>
+                <h1>Lista de professores ministrando disciplinas</h1>
 
                 <table style="width:100%;" class="table table-striped">
                     <tr>
-                        <th>Nome</th>
-                        <th>Sobrenome</th>
-                        <th>Descrição</th>
-                        <th>Telefone</th>
-                        <th>Email</th>
+                        <th>Professor</th>
+                        <th>Disciplina</th>
                         <th>Opções</th>
                     </tr>
 
-                    {% for aluno in alunos %}
+                    {% for ministra in ministras %}
                     <tr>
-                        <td>{{ aluno.nome }}</td>
-                        <td>{{ aluno.sobrenome }}</td>
-                        <td>{{ aluno.descricao }}</td>
-                        <td>{{ aluno.telefone }}</td>
-                        <td>{{ aluno.email }}</td>
+                        <td>{{ ministra.codigoProfessor }}</td>
+                        <td>{{ ministra.codigoDisciplina }}</td>
                         <td>
-                            <a href="{% url 'editarAluno' aluno.id %}" class="btn btn-primary">
+                            <a href="{% url 'editarMinistra' ministra.id %}" class="btn btn-primary">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
-                            <a href="{% url 'excluirAluno' aluno.id %}" class="btn btn-danger">
+                            <a href="{% url 'excluirMinistra' ministra.id %}" class="btn btn-danger">
                                 <i class="fas fa-trash-alt"></i>
                             </a>
                         </td>
@@ -58,7 +52,7 @@
             </center>
 
             <br/>
-            <a href="{% url 'adicionarAluno'%}" class="btn btn-primary">Novo Aluno</a>
+            <a href="{% url 'adicionarMinistra'%}" class="btn btn-primary">Nova Ministragem</a>
         </div>
     </div>
 {% endblock %}

@@ -1,19 +1,10 @@
 from django.db import models
 
-"""
-# Create your models here.
-class Documento(models.Model):
-        num_doc = models.CharField(max_length=30)
-
-        def __str__(self):
-                return self.num_doc
-"""
 class Escola(models.Model):
         nome = models.CharField(max_length=30)
         descricao = models.CharField(max_length=100)
         telefone = models.IntegerField(blank=True, null=True)
         email = models.EmailField(max_length=254, null=True, blank=True, unique=True)
-        #doc = models.OneToOneField(Documento, null=True, blank=True, on_delete=models.CASCADE)
 
         def __str__(self):
                 return self.nome + ' ' + self.descricao
@@ -21,7 +12,8 @@ class Escola(models.Model):
 class Turma(models.Model):
         nome = models.CharField(max_length=30)
         descricao = models.CharField(max_length=100)
-        codigoEscola = models.OneToOneField(Escola, null=True, blank=True, on_delete=models.CASCADE)
+        codigoEscola = models.ForeignKey(Escola, null=False, blank=False, on_delete=models.PROTECT)
+        ano = models.IntegerField(blank=False, null=True)
 
         def __str__(self):
                 return self.nome
@@ -40,8 +32,8 @@ class Professor(models.Model):
         nome = models.CharField(max_length=30)
         sobrenome = models.CharField(max_length=30)
         descricao = models.CharField(max_length=100)
-        telefone = models.IntegerField(blank=True, null=True)
-        email = models.EmailField(max_length=254, null=True, blank=True, unique=True)
+        telefone = models.IntegerField(blank=False, null=True)
+        email = models.EmailField(max_length=254, null=True, blank=False, unique=True)
 
         def __str__(self):
                 return self.nome + ' ' + self.sobrenome
@@ -61,23 +53,30 @@ class Habilidade(models.Model):
         def __str__(self):
                 return self.nome
 
-"""
-class Produto(models.Model):
-        descricao = models.CharField(max_length=30)
-        preco = models.DecimalField(max_digits=5, decimal_places=2)
+class Matricula(models.Model):
+        codigoAluno = models.ForeignKey(Aluno, null=False, blank=False, on_delete=models.PROTECT)
+        codigoTurma = models.ForeignKey(Turma, null=False, blank=False, on_delete=models.PROTECT)
 
         def __str__(self):
-                return self.descricao
+                return str(self.codigoAluno.nome) + ' - ' + str(self.codigoTurma.nome)
 
-class Venda(models.Model):
-        num_venda = models.CharField(max_length=7)
-        valor = models.DecimalField(max_digits=5, decimal_places=2)
-        desconto = models.DecimalField(max_digits=5, decimal_places=2)
-        impostos = models.DecimalField(max_digits=5, decimal_places=2)
-        pessoa = models.ForeignKey(Escola, null=True, blank=True, on_delete=models.PROTECT)
-        produtos = models.ManyToManyField(Produto, blank=True)
-
+class Contem(models.Model):
+        codigoTurma = models.ForeignKey(Turma, null=False, blank=False, on_delete=models.PROTECT)
+        codigoDisciplina = models.ForeignKey(Disciplina, null=False, blank=False, on_delete=models.PROTECT)
+        
         def __str__(self):
-                return self.num_venda
+                return str(self.codigoTurma.nome) + ' - ' + str(self.codigoDisciplina.nome)
 
-"""
+class Promove(models.Model):
+        codigoDisciplina = models.ForeignKey(Disciplina, null=False, blank=False, on_delete=models.PROTECT)
+        codigoHabilidade = models.ForeignKey(Habilidade, null=False, blank=False, on_delete=models.PROTECT)
+        
+        def __str__(self):
+                return str(self.codigoDisciplina.nome) + ' - ' + str(self.codigoHabilidade.nome)
+
+class Ministra(models.Model):
+        codigoDisciplina = models.ForeignKey(Disciplina, null=False, blank=False, on_delete=models.PROTECT)
+        codigoProfessor = models.ForeignKey(Professor, null=False, blank=False, on_delete=models.PROTECT)
+        
+        def __str__(self):
+                return str(self.codigoDisciplina.nome) + ' - ' + str(self.codigoProfessor.nome) + ' ' + str(self.codigoProfessor.sobrenome)

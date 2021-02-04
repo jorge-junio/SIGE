@@ -84,6 +84,50 @@
                                 <li><a class="dropdown-item" href="{% url 'listarHabilidade'%}">Listar</a></li>
                             </ul>
                         </li>
+
+                        <!-- Menu Matriculas -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Matriculas
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'adicionarMatricula'%}">Cadastrar</a></li>
+                                <li><a class="dropdown-item" href="{% url 'listarMatricula'%}">Listar</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Menu Contens (tabela da relação das Diciplinas presentes em uma Turma) -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Disciplinas em Turmas
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'adicionarContem'%}">Cadastrar</a></li>
+                                <li><a class="dropdown-item" href="{% url 'listarContem'%}">Listar</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Menu Promove (tabela da relação das Habilidades desenvolvidas em uma Disciplina) -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Habilidades em Disciplinas
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'adicionarPromove'%}">Cadastrar</a></li>
+                                <li><a class="dropdown-item" href="{% url 'listarPromove'%}">Listar</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Menu Ministra -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ministragem
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'adicionarMinistra'%}">Cadastrar</a></li>
+                                <li><a class="dropdown-item" href="{% url 'listarMinistra'%}">Listar</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>

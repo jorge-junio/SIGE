@@ -5,6 +5,10 @@ from .views import listarAluno, adicionarAluno, editarAluno, excluirAluno
 from .views import listarProfessor, adicionarProfessor, editarProfessor, excluirProfessor
 from .views import listarDisciplina, adicionarDisciplina, editarDisciplina, excluirDisciplina
 from .views import listarHabilidade, adicionarHabilidade, editarHabilidade, excluirHabilidade
+from .views import listarMatricula, adicionarMatricula, editarMatricula, excluirMatricula
+from .views import listarContem, adicionarContem, editarContem, excluirContem
+from .views import listarPromove, adicionarPromove, editarPromove, excluirPromove
+from .views import listarMinistra, adicionarMinistra, editarMinistra, excluirMinistra
 
 urlpatterns = [
     path('listar/', listarEscola, name='listarEscola'),
@@ -36,4 +40,24 @@ urlpatterns = [
     path('adicionarHabilidade/', adicionarHabilidade, name='adicionarHabilidade'),
     path('editarHabilidade/<int:id>/', editarHabilidade, name='editarHabilidade'),
     path('excluirHabilidade/<int:id>/', excluirHabilidade, name='excluirHabilidade'),
+
+    path('listarMatricula/', listarMatricula, name='listarMatricula'),
+    path('adicionarMatricula/', adicionarMatricula, name='adicionarMatricula'),
+    path('editarMatricula/<int:id>/', editarMatricula, name='editarMatricula'),
+    path('excluirMatricula/<int:id>/', excluirMatricula, name='excluirMatricula'),
+
+    path('listarContem/', listarContem, name='listarContem'),
+    path('adicionarContem/', adicionarContem, name='adicionarContem'),
+    path('editarContem/<int:id>/', editarContem, name='editarContem'),
+    path('excluirContem/<int:id>/', excluirContem, name='excluirContem'),
+
+    path('listarPromove/', listarPromove, name='listarPromove'),
+    path('adicionarPromove/', adicionarPromove, name='adicionarPromove'),
+    path('editarPromove/<int:id>/', editarPromove, name='editarPromove'),
+    path('excluirPromove/<int:id>/', excluirPromove, name='excluirPromove'),
+
+    path('listarMinistra/', listarMinistra, name='listarMinistra'),
+    path('adicionarMinistra/', adicionarMinistra, name='adicionarMinistra'),
+    path('editarMinistra/<int:id>/', editarMinistra, name='editarMinistra'),
+    path('excluirMinistra/<int:id>/', excluirMinistra, name='excluirMinistra'),
 ]

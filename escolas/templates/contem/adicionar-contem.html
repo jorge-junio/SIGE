@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %}Adicionar Disciplina na Turma{% endblock %}
+
+{% block main %}
+    <center><h1>Adicionar Disciplina da Turma</h1></center>
+
+    <form action="{% url 'adicionarContem' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+    </form>
+
+    <br/>
+    <a href="{% url 'listarContem'%}">Voltar</a>
+{% endblock %}
