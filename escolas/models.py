@@ -76,7 +76,7 @@ class Promove(models.Model):
 
 class Ministra(models.Model):
         codigoDisciplina = models.ForeignKey(Disciplina, null=False, blank=False, default="", on_delete=models.PROTECT)
-        codigoProfessor = models.ForeignKey(Professor, null=False, blank=False, on_delete=models.PROTECT)
+        codigoProfessor = models.ForeignKey(Professor, null=False, blank=False, default="", on_delete=models.PROTECT)
         
         def __str__(self):
                 return str(self.codigoDisciplina.nome) + ' - ' + str(self.codigoProfessor.nome) + ' ' + str(self.codigoProfessor.sobrenome)
