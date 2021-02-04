@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from escolas import urls as escola_urls
+from escolas import views as escola_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', escola_views.home),
     path('escola/', include(escola_urls)),
 ]

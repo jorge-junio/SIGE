@@ -5,6 +5,9 @@ from .forms import EscolaForm, TurmaForm, AlunoForm, ProfessorForm, DisciplinaFo
 
 # Create your views here.
 #funções da entidade Escola
+def home(request):
+    return render(request, 'escola/home.html')
+
 def listarEscola(request):
     codigo = request.GET.get('codigo', None)
 
