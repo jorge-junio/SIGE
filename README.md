@@ -37,3 +37,6 @@ Em cada uma das opções acima o usuário pode selecionar "Cadastrar" ou "Listar
 No momento de fazer o deploy do código para o servidor ocorreu um problema. Ao rodar o "migrate" no servidor para gerar o banco de dados, por algum motivo desconhecido o servidor não está gerando as tabelas que têm referência a outra tabela, e devido a isso algumas das funcionalidades comentadas acima não estão funcionando no servidor.
 
 * Link da aplicação rodando no servidor Heroku: https://srale.herokuapp.com/
+
+## Solução para o problema
+Configurei a aplicação local para acessar o banco de dados da aplicação no servidor, restartei o banco de dados do servidor e rodei as migrations, e desta vez surtiu efeito no banco do servidor. Então todas as funcionalidades voltaram a funcionar.
