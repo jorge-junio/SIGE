@@ -16,7 +16,7 @@ O banco de dados contém 10 tabelas. Sendo elas: Escola, Turma, Aluno, Disciplin
 * Promove - representa a relação entre as tabelas Disciplina e Habilidade
 * Contem - representa a relação entre as tabelas Turma e Disciplina
 
-As 4 tabelas listadas acima surgiram após a palicação das 5 formas de normalização de dados.
+As 4 tabelas listadas acima surgiram após a palicação das 5 formas de normalização de dados, para evitar problemas como inconsistência de dados.
 
 ## A aplicação
 O sistema é simples, sem login e nem autenticação. O usuário tem acesso a um Menu na parte superior da página com as seguintes opções:
