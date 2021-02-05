@@ -35,4 +35,4 @@ Em cada uma das opções acima o usuário pode selecionar "Cadastrar" ou "Listar
 ## Problemas e dificuldades encontradas
 No momento de fazer o deploy do código para o servidor ocorreu um problema. Ao rodar o "migrate" no servidor para gerar o banco de dados, por algum motivo desconhecido o servidor não está gerando as tabelas que têm referência a outra tabela, e devido a isso algumas das funcionalidades comentadas acima não estão funcionando no servidor.
 
-* Link da aplicação rodando no servidor Heroku: https://srale.herokuapp.com/escola/listarAluno/
+* Link da aplicação rodando no servidor Heroku: https://srale.herokuapp.com/
