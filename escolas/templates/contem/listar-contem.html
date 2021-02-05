@@ -37,7 +37,7 @@
                     {% for contem in contens %}
                     <tr>
                         <td>{{ contem.codigoTurma }}</td>
-                        <td>{{ contem.codigoDisciplina }}</td>
+                        <td>{{ contem.codigoDisciplina.nome }}</td>
                         <td>
                             <a href="{% url 'editarContem' contem.id %}" class="btn btn-primary">
                                 <i class="fas fa-pencil-alt"></i>

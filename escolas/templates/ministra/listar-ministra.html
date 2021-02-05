@@ -37,7 +37,7 @@
                     {% for ministra in ministras %}
                     <tr>
                         <td>{{ ministra.codigoProfessor }}</td>
-                        <td>{{ ministra.codigoDisciplina }}</td>
+                        <td>{{ ministra.codigoDisciplina.nome }}</td>
                         <td>
                             <a href="{% url 'editarMinistra' ministra.id %}" class="btn btn-primary">
                                 <i class="fas fa-pencil-alt"></i>
