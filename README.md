@@ -29,4 +29,5 @@ O sistema é simples, sem login e nem autenticação. O usuário tem acesso a um
 * Discipinas em turmas
 * Habilidades em disciplinas
 * Ministragem
+
 Em cada uma das opções acima o usuário pode selecionar "Cadastrar" ou "Listar", sendo que ao escolher listar é possível editar ou excluir itens já cadastrados na lista. Ou seja, o usuário pode inserir, excluir, editar, listar, e até mesmo buscar pelo id em cada tabela já citada. E além disso, na listagem de disciplinas é possível ver quais as Habilidades necessárias para passar em uma disciplina clicando no botão ciano com o ícone de lista no lado direito de cada disciplina. 
