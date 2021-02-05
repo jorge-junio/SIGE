@@ -13,7 +13,7 @@ class Turma(models.Model):
         nome = models.CharField(max_length=30)
         descricao = models.CharField(max_length=100)
         ano = models.IntegerField(default=2021)
-        codigoEscola = models.ForeignKey(Escola, null=True, blank=True, default="", on_delete=models.PROTECT)
+        codigoEscola = models.ForeignKey(Escola, null=True, blank=True, on_delete=models.PROTECT)
 
         def __str__(self):
                 return self.nome
@@ -54,22 +54,22 @@ class Habilidade(models.Model):
                 return self.nome
 
 class Matricula(models.Model):
-        codigoAluno = models.ForeignKey(Aluno, null=True, blank=True, default="", on_delete=models.PROTECT)
-        codigoTurma = models.ForeignKey(Turma, null=True, blank=True, default="", on_delete=models.PROTECT)
+        codigoAluno = models.ForeignKey(Aluno, null=True, blank=True, on_delete=models.PROTECT)
+        codigoTurma = models.ForeignKey(Turma, null=True, blank=True, on_delete=models.PROTECT)
 
         def __str__(self):
                 return str(self.codigoAluno.nome) + ' - ' + str(self.codigoTurma.nome)
 
 class Contem(models.Model):
-        codigoTurma = models.ForeignKey(Turma, null=True, blank=True, default="", on_delete=models.PROTECT)
-        codigoDisciplina = models.ForeignKey(Disciplina, null=True, blank=True, default="", on_delete=models.PROTECT)
+        codigoTurma = models.ForeignKey(Turma, null=True, blank=True, on_delete=models.PROTECT)
+        codigoDisciplina = models.ForeignKey(Disciplina, null=True, blank=True, on_delete=models.PROTECT)
         
         def __str__(self):
                 return str(self.codigoTurma.nome) + ' - ' + str(self.codigoDisciplina.nome)
 
 class Promove(models.Model):
-        codigoDisciplina = models.ForeignKey(Disciplina, null=True, blank=True, default="", on_delete=models.PROTECT)
-        codigoHabilidade = models.ForeignKey(Habilidade, null=True, blank=True, default="", on_delete=models.PROTECT)
+        codigoDisciplina = models.ForeignKey(Disciplina, null=True, blank=True, on_delete=models.PROTECT)
+        codigoHabilidade = models.ForeignKey(Habilidade, null=True, blank=True, on_delete=models.PROTECT)
         
         def __str__(self):
                 return str(self.codigoDisciplina.nome) + ' - ' + str(self.codigoHabilidade.nome)
