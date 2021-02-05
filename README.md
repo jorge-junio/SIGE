@@ -15,6 +15,7 @@ O banco de dados contém 10 tabelas. Sendo elas: Escola, Turma, Aluno, Disciplin
 * Ministra - representa a relação entre as tabelas Professor e Disciplina
 * Promove - representa a relação entre as tabelas Disciplina e Habilidade
 * Contem - representa a relação entre as tabelas Turma e Disciplina
+
 As 4 tabelas listadas acima surgiram após a palicação das 5 formas de normalização de dados.
 
 ## A aplicação
