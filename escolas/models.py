@@ -12,8 +12,8 @@ class Escola(models.Model):
 class Turma(models.Model):
         nome = models.CharField(max_length=30)
         descricao = models.CharField(max_length=100)
-        codigoEscola = models.ForeignKey(Escola, default="" , on_delete=models.PROTECT)
         ano = models.IntegerField(default=2021)
+        codigoEscola = models.ForeignKey(Escola, default="" , on_delete=models.PROTECT)
 
         def __str__(self):
                 return self.nome
@@ -75,8 +75,8 @@ class Promove(models.Model):
                 return str(self.codigoDisciplina.nome) + ' - ' + str(self.codigoHabilidade.nome)
 
 class Ministra(models.Model):
-        codigoDisciplina = models.ForeignKey(Disciplina, default="", on_delete=models.PROTECT)
-        codigoProfessor = models.ForeignKey(Professor,  default="", on_delete=models.PROTECT)
+        codigoDisciplina = models.ForeignKey(Disciplina, on_delete=models.PROTECT)
+        codigoProfessor = models.ForeignKey(Professor, on_delete=models.PROTECT)
         
         def __str__(self):
                 return str(self.codigoDisciplina.nome) + ' - ' + str(self.codigoProfessor.nome) + ' ' + str(self.codigoProfessor.sobrenome)

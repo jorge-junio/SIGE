@@ -31,3 +31,8 @@ O sistema é simples, sem login e nem autenticação. O usuário tem acesso a um
 * Ministragem
 
 Em cada uma das opções acima o usuário pode selecionar "Cadastrar" ou "Listar", sendo que ao escolher listar é possível editar ou excluir itens já cadastrados na lista. Ou seja, o usuário pode inserir, excluir, editar, listar, e até mesmo buscar pelo id em cada tabela já citada. E além disso, na listagem de disciplinas é possível ver quais as Habilidades necessárias para passar em uma disciplina clicando no botão ciano com o ícone de lista no lado direito de cada disciplina. 
+
+## Problemas e dificuldades encontradas
+No momento de fazer o deploy do código para o servidor ocorreu um problema. Ao rodar o "migrate" no servidor para gerar o banco de dados, por algum motivo desconhecido o servidor não está gerando as tabelas que têm referência a outra tabela, e devido a isso algumas das funcionalidades comentadas acima não estão funcionando no servidor.
+
+* Link da aplicação rodando no servidor Heroku: https://srale.herokuapp.com/escola/listarAluno/
