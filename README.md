@@ -1,6 +1,8 @@
 # Projeto SRALE - Sistema de Registro de Ano Letivo em Escolas
 Este projeto é um sistema web desenvolvido usando Python com Django. O mesmo conta com o cadastro de Escolas, Turmas, Disciplinas, Professores, Alunos, e Habilidades. Para rodar o projeto em sua máquina é necessária a instalação de algumas bibliotecas python, todas elas estão listadas nos arquivos "requirements-dev.txt" e "requirements.txt". Sendo que o requirements.txt é voltado para o servidor Heroku.
 
+* Link da aplicação rodando no servidor Heroku: https://srale.herokuapp.com/
+
 ## Como rodar o projeto em sua máquina
 * Faça o clone deste repositório usando o comando: git clone https://github.com/jorge-junio/SIGE.git
 * Crie uma virtual env e ative ela
